@@ -7,33 +7,24 @@ import org.apache.spark.storage.StorageLevel
 object Exercise2 extends App {
 
   override def main(args: Array[String]): Unit = {
-    val sc = getSparkContext()
-
-    if(args.length >= 3){
-      var host = args(1)
-      var port = args(2).toInt
-      var path = if (args.length >= 4) args(3) else ""
-      args(0) match {
-        case "1" => exercise1(sc,host,port)
-        case "2" => exercise2(sc,host,port)
-        case "3" => exercise3(sc,host,port, path)
-        case "4" => exercise4(sc,host,port, path)
-        case "5" => exercise5(sc,host,port)
-        case "6" => exercise6(sc,host,port)
-        case "7" => exercise7(sc,host,port,path)
-        case "8" => exercise8(sc,host,port,path)
-      }
-    }
-  }
-
-  /**
-   * Creates the SparkContent; comment/uncomment code depending on Spark's version!
-   * @return
-   */
-  def getSparkContext(): SparkContext = {
     val spark = SparkSession.builder.appName("Exercise 304 - Spark2").getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
-    spark.sparkContext
+
+    if(args.length >= 3){
+      val host = args(1)
+      val port = args(2).toInt
+      val path = if (args.length >= 4) args(3) else ""
+      args(0) match {
+        case "1" => exercise1(spark.sparkContext,host,port)
+        case "2" => exercise2(spark.sparkContext,host,port)
+        case "3" => exercise3(spark.sparkContext,host,port, path)
+        case "4" => exercise4(spark.sparkContext,host,port, path)
+        case "5" => exercise5(spark.sparkContext,host,port)
+        case "6" => exercise6(spark.sparkContext,host,port)
+        case "7" => exercise7(spark.sparkContext,host,port,path)
+        case "8" => exercise8(spark.sparkContext,host,port,path)
+      }
+    }
   }
 
   /**

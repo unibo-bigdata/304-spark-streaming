@@ -6,7 +6,9 @@ import org.apache.spark.storage.StorageLevel
 object Exercise1 extends App {
 
   override def main(args: Array[String]): Unit = {
-    val sc = getSparkContext()
+    val conf = new SparkConf().setAppName("Exercise 304 - Spark1")
+    val sc = new SparkContext(conf)
+    sc.setLogLevel("ERROR")
 
     if(args.length >= 3){
       var host = args(1)
@@ -23,17 +25,6 @@ object Exercise1 extends App {
         case "8" => exercise8(sc,host,port,path)
       }
     }
-  }
-
-  /**
-   * Creates the SparkContent; comment/uncomment code depending on Spark's version!
-   * @return
-   */
-  def getSparkContext(): SparkContext = {
-    val conf = new SparkConf().setAppName("Exercise 302 - Spark1")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
-    sc
   }
 
   /**
