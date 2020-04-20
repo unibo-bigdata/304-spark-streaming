@@ -4,7 +4,7 @@ Module 1, Big Data course (81932), University of Bologna.
 
 ## 304-0 Setup
 
-For the streaming scenario we need to terminal instances:
+For the streaming scenario we need two terminal instances:
 - One to run a Netcat server to send some data
 - One to run the streaming application
 
