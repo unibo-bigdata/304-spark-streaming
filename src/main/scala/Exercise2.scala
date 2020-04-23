@@ -21,8 +21,8 @@ object Exercise2 extends App {
         case "4" => exercise4(spark.sparkContext,host,port, path)
         case "5" => exercise5(spark.sparkContext,host,port)
         case "6" => exercise6(spark.sparkContext,host,port)
-        case "7" => exercise7(spark.sparkContext,host,port,path)
-        case "8" => exercise8(spark.sparkContext,host,port,path)
+        case "7" => exercise7(spark.sparkContext,host,port, path)
+        case "8" => exercise8(spark.sparkContext,host,port, path)
       }
     }
   }

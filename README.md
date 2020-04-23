@@ -12,7 +12,7 @@ For the streaming scenario we need two terminal instances:
 
 To simulate the streaming scenario we need a source that sends data. 
 Both the cluster and the VM are equipped with Netcat.
-- Usage: ```netcat -lk <port>```
+- Usage: ```nc -lk <port>```
 
 Use an available port number, e.g., ```9999```. 
 Beware of possible conflicts when doing this on the cluster. 
@@ -114,4 +114,6 @@ This job extends the previous one by calculating also the average sentiment
 Remember to either create a new directory on HDFS or to empty the previous one.
 - ```spark2-submit --class Exercise BD-304-spark-streaming.jar <exerciseNumber> <host> <port> <path>```
 
+## 304-9 Streaming algorithms
 
+Go to "README-Algorithms.md" for exercises on streaming algorithms.
